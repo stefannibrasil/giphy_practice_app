@@ -1,0 +1,17 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<h1>Hello, OmbuLabs!</h1>
+
+<% @gifs.each do |gif| %>
+  <p>
+    <% if gif.image.attached? %>
+      <%= image_tag gif.image %>
+    <% end %>
+  </p>
+<% end %>
+
+<%= link_to "Add a GIF", new_gif_path %>
